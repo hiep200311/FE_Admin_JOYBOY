@@ -1,0 +1,61 @@
+<div class="container">
+    <h1>Danh mục sản phẩm</h1>
+    <br>
+    <div class="content">
+      <div class="form-section">
+        <form [formGroup]="attributeForm" (ngSubmit)="onSubmit()">
+            <h2>Tạo tùy chọn thuộc tính</h2>
+          
+            <label for="name">Tên tùy chọn thuộc tính</label>
+            <input type="text" id="name" formControlName="name">
+            <div *ngIf="attributeForm.get('name')?.invalid && attributeForm.get('name')?.touched">
+              Tên là bắt buộc.
+            </div>
+          
+            <label for="value">Giá trị tùy chọn thuộc tính</label>
+            <input type="text" id="value" formControlName="value">
+            <div *ngIf="attributeForm.get('value')?.invalid && attributeForm.get('value')?.touched">
+              Giá trị là bắt buộc.
+            </div>
+          
+            <label for="categoryId">Tên loại thuộc tính</label>
+            <select id="categoryId" formControlName="categoryId">
+              <option *ngFor="let type of attributeTypes" [value]="type.id">{{ type.attribute_name }}</option>
+            </select>
+          
+            <button type="submit" class="add-button" [disabled]="attributeForm.invalid">Tạo tùy chọn thuộc tính</button>
+          </form>
+      </div>
+
+      <div class="categories-section">
+        <h2>Tùy chọn thuộc tính</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th><input type="checkbox"></th>
+                <th>Tên Tùy chọn thuộc tính</th>
+                <th>Tên loại thuộc tính</th>
+                <th>Giá trị tùy chọn thuộc tính</th>
+                <th>Thời gian tạo</th>
+                <th>Thời gian sửa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let attribute of attributes">
+                <td><input type="checkbox"></td>
+                <td>{{ attribute.attribute_option_name }}</td>
+                <td>{{ attribute.attributeType.attribute_name }}</td>
+                <td>{{ attribute.attribute_option_value }}</td>
+                <td>{{ formatDate(attribute.create_at) }}</td>
+                <td>{{ attribute.update_at ? formatDate(attribute.update_at) : 'N/A' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+
+
+    </div>
+  </div>

@@ -1,0 +1,135 @@
+.card {
+    width: 90%;
+    height: auto;
+    background: lightgrey;
+    position:absolute;
+    top: 50px;
+    left: 100px;
+  }
+  table {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0 15px;
+  }
+  
+  table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd!important;
+    padding: .35em;
+    margin-bottom: 10px;
+  }
+  
+  table th,
+  table td {
+    padding: 1.5em;
+    text-align: left;
+  
+  }
+  
+  table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .tab-img{
+      display: inline-block;
+      width: 30px;
+      vertical-align: middle;
+      border: 1px solid #000;
+      border-radius: 30px;
+      margin-right: 8px;
+  }
+  .ticon{
+      padding: 5px;
+      background: var(--gray);
+      border-radius: 4px;
+      width: 15px;
+      height: 15px;
+      text-align: center;
+  }
+  .pe{
+      content: '';
+      position:absolute;
+      width: 7px;
+      height: 7px;
+      background: red;
+      border-radius: 10px;
+      left: 10px;
+      top: 37px;
+      transform: scale(0.5);
+      box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
+      animation: pulse-red 2s infinite;
+      cursor: pointer;
+  }
+  .de{
+      content: '';
+      position:absolute;
+      width: 7px;
+      height: 7px;
+      background: green;
+      border-radius: 10px;
+      left: 10px;
+      top: 37px;
+      transform: scale(0.5);
+      box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
+      animation: pulse-green 2s infinite;
+      cursor: pointer;
+  }
+  @keyframes pulse-green {
+      0% {
+          transform: scale(0.85);
+          box-shadow: 0 0 0 0 rgba(82, 255, 82, 0.7);
+      }
+      
+      70% {
+          transform: scale(1);
+          box-shadow: 0 0 0 25px rgba(82, 255, 82, 0);
+      }
+      
+      100% {
+          transform: scale(0.85);
+          box-shadow: 0 0 0 0 rgba(82, 255, 82, 0);
+      }
+  }
+  .active-tr{
+      background: var(--blue);
+      color: var(--white);
+  }
+  .active-tr .ticon{
+      background: #e5e5e54f;
+  }
+
+  .table-container {
+    max-height: 800px; /* Chiều cao tối đa của bảng, có thể thay đổi tùy ý */
+    overflow-y: auto; /* Tạo thanh cuộn dọc */
+    overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
+  }
+  
+  .table-container table {
+    width: 100%; /* Đảm bảo bảng chiếm hết chiều rộng của container */
+    border-collapse: collapse;
+  }
+  
+  .table-container th,
+  .table-container td {
+    border: 1px solid #ddd; /* Đường viền giữa các ô */
+    padding: 8px; /* Khoảng đệm trong các ô */
+    text-align: left;
+  }
+  
+  .table-container th {
+    background-color: #f2f2f2; /* Màu nền của tiêu đề cột */
+    position: sticky; /* Giữ tiêu đề cột cố định khi cuộn */
+    top: 0;
+  }
+  
+  .tab-img {
+    width: 50px; /* Chiều rộng của hình ảnh */
+    height: auto; /* Tự động điều chỉnh chiều cao để giữ tỷ lệ */
+  }
+  
+
+  

@@ -1,0 +1,52 @@
+<div class="body">
+    <div class="container">
+        <div class="Form login-form">
+        <h2>Đăng Nhập Tài Khoản</h2>
+        <form action="#" (submit)="onLogin()" [formGroup] = "formLogin">
+           
+            <div *ngIf="checkError" class="alert alert-danger">
+                <strong>{{checkError}}!</strong>
+                <button type="button" class="close" aria-label="Close" (click)="checkError=''">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            
+            <div class="input-box">
+
+                <label for="email">Email</label>
+                <input type="email"  formControlName="email"  placeholder="Nhập Email*">
+
+                <div *ngIf="f['email'].touched && f['email'].errors">
+                   <small class="help-block" *ngIf="f['email'].errors['required']">Email is required.</small>
+                   <small class="help-block" *ngIf="f['email'].errors['email']">Invalid email.</small>
+                </div>
+            </div>
+
+
+            <div class="input-box">
+                <label for="password">Mật Khẩu</label>
+                <input type="password"  formControlName="password"  id="password" placeholder="Nhập mật khẩu*"  >
+                <div *ngIf="f['password'].touched && f['password'].errors">
+                    <small class="help-block" *ngIf="f['password'].errors['required']">Password is required.</small>
+                    <small class="help-block" *ngIf="f['password'].errors['minLength']">Passwords must be at least 6 characters.</small>
+                    <small class="help-block" *ngIf="f['password'].errors['maxLength']">Password has maximum 35 characters.</small>
+                 </div>
+            </div>
+            <div class="forgot-section">
+                <span><input type="checkbox" name="" id="checked">Nhớ mật khẩu</span>
+                <span><a href="#">Quên mật khẩu?</a></span>
+            </div>
+            <button type="submit" class="btn" [disabled]="f['email'].errors || f['password'].errors">Đăng Nhập</button>
+        </form>
+        <p>hoặc đăng nhập với.</p>
+        <div class="social-media">
+            <ion-icon name="logo-facebook"></ion-icon>
+    
+            <ion-icon name="logo-twitter"></ion-icon>
+            <ion-icon name="logo-google"></ion-icon>
+        </div>
+        <p class="RegisteBtn RegiBtn"> <a routerLink="/register">Đăng Ký Tài Khoản</a></p>
+    </div>
+    
+    </div>
+    </div>

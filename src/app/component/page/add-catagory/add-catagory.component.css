@@ -1,0 +1,338 @@
+/* styles.css */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1, h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .help-text {
+    font-size: 12px;
+    color: #777;
+    margin-top: -5px;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  select,
+  textarea {
+    width: calc(100% - 22px);
+    padding: 12px;
+    margin-top: 5px;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  
+  input[type="text"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #0073aa;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 115, 170, 0.5);
+  }
+  
+  button {
+    padding: 12px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .upload-button {
+    background-color: #6c757d;
+  }
+  
+  .upload-button:hover {
+    background-color: #5a6268;
+  }
+  
+  .add-button {
+    background-color: #0073aa;
+  }
+  
+  .add-button:hover {
+    background-color: #005a87;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .form-section {
+    width: 30%;
+  }
+
+  .categories-section {
+    width: 66%;
+  }
+  
+  .categories-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .categories-section table, th, td {
+    border: 0px solid #000000;
+  }
+  
+  .categories-section th, .categories-section td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .categories-section th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+  }
+  
+  .categories-section tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .categories-section img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+
+  /* styles.css */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.help-text {
+  font-size: 12px;
+  color: #777;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: calc(100% - 22px);
+  padding: 12px;
+  margin-top: 5px;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #0073aa;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 115, 170, 0.5);
+}
+
+button {
+  padding: 12px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button {
+  background-color: #6c757d;
+}
+
+.upload-button:hover {
+  background-color: #5a6268;
+}
+
+.add-button {
+  background-color: #0073aa;
+}
+
+.add-button:hover {
+  background-color: #005a87;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-section {
+  width: 30%;
+}
+
+.categories-section {
+  width: 66%;
+}
+
+.categories-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.categories-section table, th, td {
+  border: 0px solid #000000;
+}
+
+.categories-section th, .categories-section td {
+  padding: 12px;
+  text-align: left;
+}
+
+.categories-section th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+
+.categories-section tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.categories-section img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+
+.image-upload {
+border: 2px dashed #ccc;
+padding: 20px;
+text-align: center;
+background-color: #fafafa;
+border-radius: 4px;
+}
+
+.image-upload p {
+margin: 10px 0;
+color: #333;
+}
+
+.image-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+gap: 10px;
+padding-bottom: 20px;
+}
+
+
+.btn-img{
+margin-top: 20px;
+background-color: rgb(187, 153, 112);
+color: white;
+font-weight: bold;
+}
+
+.btn-img:hover{
+background-color: rgb(126, 101, 67);
+}
+
+.table-container {
+  max-height: 600px; /* Chiều cao tối đa của bảng, có thể thay đổi tùy ý */
+  overflow-y: auto; /* Tạo thanh cuộn dọc */
+  overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
+}
+
+.table-container table {
+  width: 100%; /* Đảm bảo bảng chiếm hết chiều rộng của container */
+  border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+  border: 1px solid #ddd; /* Đường viền giữa các ô */
+  padding: 8px; /* Khoảng đệm trong các ô */
+  text-align: left;
+}
+
+.table-container th {
+  background-color: #f2f2f2; /* Màu nền của tiêu đề cột */
+  position: sticky; /* Giữ tiêu đề cột cố định khi cuộn */
+  top: 0;
+}
+
+.table-container img {
+  width: 50px; /* Chiều rộng của hình ảnh */
+  height: auto; /* Tự động điều chỉnh chiều cao để giữ tỷ lệ */
+}

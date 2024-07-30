@@ -1,0 +1,19 @@
+<form [formGroup]="categoryForm" (ngSubmit)="uploadImages()">
+  <div class="container">
+    <label for="category-images">Thêm hình ảnh</label>
+    <div id="thumbnailsContainer" class="thumbnails-container"></div>
+    
+    <div class="image-upload">
+      <input id="category-images" type="file" (change)="onFilesSelected($event)" multiple>
+      <div id="imageGrid" class="image-grid"></div>
+      <p>Drag your photo here or <a href="#">Browse from device</a></p>
+    </div>
+
+    <label for="categoryId">Tên danh mục</label>
+    <select id="categoryId" formControlName="categoryId" (change)="onCategorySelect($event)">
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+    </select>
+    
+    <button type="submit" class="btn-img">Thêm hình ảnh</button>
+  </div>
+</form>

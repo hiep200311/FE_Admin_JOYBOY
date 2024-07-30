@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="header">
+      <h1>Thêm sản phẩm</h1>
+      <p>Đơn đặt hàng được đặt trên cửa hàng của bạn</p>
+    </div>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="main-content">
+        <div class="left-column">
+          <div class="form-group">
+            <label for="product-title">Tên sản phẩm</label>
+            <input type="text" id="name" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label for="product-title">Tiêu đề sản phẩm</label>
+            <input type="text" id="title" formControlName="title">
+          </div>
+          <div class="form-group">
+            <label for="product-description">Mô tả sản phẩm</label>
+            <div class="text-editor-toolbar">
+              <button type="button"><strong>B</strong></button>
+              <button type="button"><em>I</em></button>
+              <button type="button"><u>U</u></button>
+              <button type="button"><s>S</s></button>
+              <button type="button">↶</button>
+              <button type="button">↷</button>
+              <button type="button">•</button>
+              <button type="button">1.</button>
+              <button type="button">Link</button>
+            </div>
+            <textarea id="description" formControlName="description"></textarea>
+          </div>
+
+          <div class="form-group inventory">
+            <h2>Product data</h2>
+            <div class="inventory-content">
+              <div class="pricing">
+                <label for="regular-price">Giá gốc</label>
+                <input type="text" id="price" formControlName="price" placeholder="vnd">
+                <label for="sale-price">Giảm giá</label>
+                <input type="text" id="discount_price" formControlName="discount_price" placeholder="vnd">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-column">
+          <div class="form-group organize">
+            <h2>Danh mục sản phẩm</h2>
+            <label for="categoryId">Danh mục</label>
+            <div class="dropdown">
+              <select id="categoryId" formControlName="categoryId">
+                <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+              </select>
+              <a routerLink="/add-catagory" class="add-link">Thêm danh mục mới</a>
+            </div>
+            <label for="brandId">Thương hiệu</label>
+            <div class="dropdown">
+              <select id="brandId" formControlName="brandId">
+                <option *ngFor="let brand of brands" [value]="brand.id">{{ brand.brandName }}</option>
+              </select>
+              <a routerLink="/add-brand" class="add-link">Thêm thương hiệu mới</a>
+            </div>
+          </div>
+          <div class="form-group variants">
+            <h2>Thuộc tính sản phẩm</h2>
+            <div class="variant">
+              <label for="option-1">Thuộc tính 1</label>
+              <div class="dropdown">
+                <select id="option-1">
+                  <option value="">Size</option>
+                </select>
+                <a href="#" class="remove-link">Remove</a>
+              </div>
+            </div>
+            <button type="button" class="add-option">Add another option</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="publish-button" [disabled]="productForm.invalid">Tạo sản phẩm</button>
+      </div>
+    </form>
+
+    <div class="form-group">
+    
+      <label class="label-img" for="product-images">Thêm hình ảnh</label>
+      <div class="thumbnail">
+        <div  id="thumbnailsContainer" class="thumbnails-container"></div>
+      </div>
+      
+      
+      <div class="image-upload">
+        <input id="product-images" type="file" (change)="onFilesSelected($event)" multiple>
+        <div id="imageGrid" class="image-grid"></div>
+        <p>Drag your photo here or <a href="#">Browse from device</a></p>
+      </div>
+
+      <label for="product-select">Sản phẩm</label>
+      <div class="dropdown">
+        <select id="product-select" (change)="onProductSelect($event)">
+          <option *ngFor="let product of products" [value]="product.id">{{ product.name_product }}</option>
+        </select>
+      </div>
+      
+      <button (click)="uploadImages()" style="margin-top: 20px;">Thêm hình ảnh</button>
+    </div>
+
+    
+  </div>
+  

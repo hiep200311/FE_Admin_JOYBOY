@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col" width="80px">Hình ảnh</th>
+          <th scope="col" width="100px">Tên Người dùng</th>
+          <th scope="col" width="100px">Email</th>
+          <th scope="col" width="100px">Số điện thoại</th>
+          <th scope="col" width="70px">Thời gian tạo</th>
+          <th scope="col" width="70px">Thời gian sửa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td data-label="Hình ảnh">
+            <img [src]="'http://localhost:8888/api/v1/products/images/' + user.profileImage" class="tab-img" alt="Profile Image">
+          </td>
+          <td data-label="Tên Người dùng">{{ user.username }}</td>
+          <td data-label="Email">{{ user.email }}</td>
+          <td data-label="Số điện thoại">{{ user.phoneNumber }}</td>
+          <td data-label="Thời gian tạo">{{ formatDate(user.create_at) }}</td>
+          <td data-label="Thời gian sửa">{{ user.update_at ? formatDate(user.update_at) : 'N/A' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

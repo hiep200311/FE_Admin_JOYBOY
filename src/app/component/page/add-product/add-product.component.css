@@ -1,0 +1,297 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.header p {
+    margin: 5px 0 0;
+    color: #777;
+}
+
+.main-content {
+    display: flex;
+    gap: 20px;
+}
+
+.left-column {
+    flex: 2; /* Make the left column larger */
+}
+
+.right-column {
+    flex: 1; /* Keep the right column smaller */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+textarea {
+    height: 255px;
+}
+
+.text-editor-toolbar {
+    margin-bottom: 10px;
+}
+
+.text-editor-toolbar button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.image-upload {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    background-color: #fafafa;
+    border-radius: 4px;
+}
+
+.image-upload p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.thumbnail {
+    position: relative;
+}
+
+.thumbnail img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.inventory {
+    margin-bottom: 20px;
+}
+
+.inventory-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab-button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.tab-button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.inventory-content {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 4px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.discard-button {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.save-draft-button {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.publish-button {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.right-column .form-group {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.right-column .form-group h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.right-column .dropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right-column .dropdown select {
+    flex: 1;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.right-column .add-link,
+.right-column .remove-link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.right-column .add-link:hover,
+.right-column .remove-link:hover {
+    text-decoration: underline;
+}
+
+.add-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    color: #007bff;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.add-option:hover {
+    text-decoration: underline;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.image-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.label-img{
+    margin-top:  30px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#thumbnailsContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Nếu bạn có nhiều hình ảnh và muốn có thể cuộn ngang */
+  }
+  
+  .thumbnail {
+    position: relative;
+    margin-right: 10px; /* Khoảng cách giữa các hình ảnh */
+  }
+  
+  .thumbnail img {
+    display: block; /* Đảm bảo hình ảnh không bị tràn ra ngoài phần tử cha */
+    max-width: 100%; /* Đảm bảo hình ảnh không lớn hơn phần tử cha */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+  }

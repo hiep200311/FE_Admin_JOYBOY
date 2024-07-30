@@ -1,0 +1,59 @@
+<body>
+  <div class="container">
+        <h1>Danh mục sản phẩm</h1>
+        <br>
+        <div class="content">
+            <div class="form-section">
+                <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+                    <h2>Tạo mới danh mục</h2>
+                    
+                    <label for="name">Tên</label>
+                    <input type="text" id="name" formControlName="name">
+                    <div *ngIf="categoryForm.get('name')?.invalid && categoryForm.get('name')?.touched">
+                      Tên là bắt buộc.
+                    </div>
+                  
+                    <label for="description">Mô tả</label>
+                    <textarea id="description" formControlName="description"></textarea>
+                    <div *ngIf="categoryForm.get('description')?.invalid && categoryForm.get('description')?.touched">
+                      Mô tả là bắt buộc.
+                    </div>
+                  
+                    <button type="submit" class="add-button" [disabled]="categoryForm.invalid">Tạo danh mục</button>
+                  </form>
+            </div>
+            <div class="categories-section">
+              <h2>Danh mục</h2>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th><input type="checkbox"></th>
+                      <th>Hình ảnh</th>
+                      <th>Tên</th>
+                      <th>CreateAt</th>
+                      <th>updatedAt</th>
+                      <th>Mô tả</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let category of categories">
+                      <td><input type="checkbox"></td>
+                      <td>
+                        <img [src]="'http://localhost:8888/api/v1/products/images/' + category.thumbnail_category" alt="{{category.name}}">
+                      </td>
+                      <td>{{ category.name }}</td>
+                      <td>{{ formatDate(category.createdAt) }}</td>
+                      <td>{{ category.updatedAt ? formatDate(category.updatedAt) : 'N/A' }}</td>
+                      <td>{{ getShortDescription(category.description) }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+
+
+        </div>
+    </div>
+</body>

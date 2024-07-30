@@ -2,43 +2,52 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './component/common/header/header.component';
 import { IonicModule } from '@ionic/angular';
 import {NgOptimizedImage} from "@angular/common";
-import { BannerComponent } from './component/common/banner/banner.component';
-import { HomeComponent } from './component/page/home/home.component';
-import { FooterComponent } from './component/common/footer/footer.component';
-import { FilterProductComponent } from './component/page/filter-product/filter-product.component';
-import { NewsComponent } from './component/page/news/news.component';
-import { ProductDetailComponent } from './component/page/product-detail/product-detail.component';
-import { LoginPageComponent } from './component/page/login-page/login-page.component';
-import { RegisterPageComponent } from './component/page/register-page/register-page.component';
-import { PaymentComponent } from './component/page/payment/payment.component';
-import { ShoppingCartComponent } from './component/page/shopping-cart/shopping-cart.component';
+import { LoginComponent } from './component/page/login/login.component';
+import { SidebarNavigationMenuComponent } from './component/page/sidebar-navigation-menu/sidebar-navigation-menu.component';
+import { AddCatagoryComponent } from './component/page/add-catagory/add-catagory.component';
+import { AddBrandComponent } from './component/page/add-brand/add-brand.component';
+import { AddProductComponent } from './component/page/add-product/add-product.component';
+import { AddAttributesComponent } from './component/page/add-attributes/add-attributes.component';
+import { ListProductComponent } from './component/page/list-product/list-product.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ListUserComponent } from './component/page/list-user/list-user.component';
+import { AddAttributeOptionComponent } from './component/page/add-attribute-option/add-attribute-option.component';
+import { ProductAttributeComponent } from './component/page/product-attribute/product-attribute.component';
+import { AddImgAttributeComponent } from './component/page/add-img-attribute/add-img-attribute.component';
+import { AddImgCategoryComponent } from './component/page/add-img-category/add-img-category.component';
 
 @NgModule({
-  declarations: [
+   declarations: [
     AppComponent,
-    HeaderComponent,
-    BannerComponent,
-    HomeComponent,
-    FooterComponent,
-    FilterProductComponent,
-    NewsComponent,
-    ProductDetailComponent,
-    LoginPageComponent, 
-    RegisterPageComponent,
-    PaymentComponent,
-    RegisterPageComponent,
-    ShoppingCartComponent
+      LoginComponent,
+      SidebarNavigationMenuComponent,
+      AddCatagoryComponent,
+      AddBrandComponent,
+      AddProductComponent,
+      AddAttributesComponent,
+      ListProductComponent,
+      ListUserComponent,
+      AddAttributeOptionComponent,
+      ProductAttributeComponent,
+      AddImgAttributeComponent,
+      AddImgCategoryComponent,
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         IonicModule.forRoot({}),
         NgOptimizedImage,
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule,
+        IonicModule.forRoot({}),
+        NgOptimizedImage,
     ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

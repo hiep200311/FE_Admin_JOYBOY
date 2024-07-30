@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>Danh mục sản phẩm</h1>
+    <br>
+    <div class="content">
+      <div class="form-section">
+        <form [formGroup]="attributeForm" (ngSubmit)="onSubmit()">
+          <h2>Tạo mới loại thuộc tính</h2>
+          
+          <label for="name">Tên thuộc tính</label>
+          <input type="text" id="name" formControlName="name">
+          <div *ngIf="attributeForm.get('name')?.invalid && attributeForm.get('name')?.touched">
+            Tên là bắt buộc.
+          </div>
+        
+          <button type="submit" class="add-button" [disabled]="attributeForm.invalid">Tạo loại thuộc tính</button>
+        </form>
+      </div>
+
+      <div class="categories-section">
+        <h2>Danh mục</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th><input type="checkbox"></th>
+                <th>Tên</th>
+                <th>CreateAt</th>
+                <th>updatedAt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let attribute of attributes">
+                <td><input type="checkbox"></td>
+                <td>{{ attribute.attribute_name }}</td>
+                <td>{{ formatDate(attribute.created_at) }}</td>
+                <td>{{ attribute.updated_at ? formatDate(attribute.updated_at) : 'N/A' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+
+
+    </div>
+  </div>

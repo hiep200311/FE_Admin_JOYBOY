@@ -1,0 +1,24 @@
+<div class="container">
+    <form [formGroup]="productAttribute" (ngSubmit)="onSubmit1()" class="form-group">
+      <label for="product-images">Thêm hình ảnh</label>
+      <div id="thumbnailsContainer" class="thumbnails-container"></div>
+      
+      <div class="image-upload">
+        <input id="product-images" type="file" (change)="onFilesSelected($event)" multiple>
+        <div id="imageGrid" class="image-grid"></div>
+        <p>Drag your photo here or <a href="#">Browse from device</a></p>
+      </div>
+  
+      <label for="productId">Tên sản phẩm</label>
+      <select id="productId" formControlName="productId" (change)="onProductSelect($event)">
+        <option *ngFor="let product of products" [value]="product.id">{{ product.name_product }}</option>
+      </select>
+    
+      <label for="attributeOptionId">Tên Tùy chọn thuộc tính</label>
+      <select id="attributeOptionId" formControlName="attributeOptionId"  (change)="onAttibuteOptionSelect($event)">
+        <option *ngFor="let attribute of attributes" [value]="attribute.id">{{ attribute.attribute_option_name }}</option>
+      </select>
+      
+      <button class="btn-img">Thêm hình ảnh</button>
+    </form>
+  </div>
